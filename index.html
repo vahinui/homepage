@@ -1,0 +1,134 @@
+
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>L09: franklin JSON weather info</title>
+    <meta name="description" content="l09-assignment">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small-9.css" type= "text/css">
+    <link rel="stylesheet" href="styles/medium-9.css" media="(min-width:37.5em)" type="text/css">
+    <link rel="stylesheet" href="styles/large-9.css" media="(min-width:64em)" type="text/css">
+    <link rel="jssheet" href="js/weatherapi.js">
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Neuton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    
+    
+    
+</head>
+<body>
+    
+    
+<!--HEADER HERE-->
+  <header>
+      <picture> 
+          <img src="images/logo1.jpg" alt="logo">
+      </picture>
+          
+    <h1 class="title">Get Ready to Know Your Weather</h1>
+    <h2 class="subtitle"><em>Your </em> Home, <em>Your </em> Weather</h2>       
+  </header>
+    
+    
+<!--NAVIGATION HERE-->  
+    <nav class="clearfix">
+        <button onclick="toggleMenu">&#97776;</button>
+        <ul class="container1" id="primaryNav" class="hide">
+    	   <li class="flexItem1"><a href="#">Home</a></li>
+    	   <li class="flexItem1" class="active"><a href="https://vahinui.github.io/cit230-l07/">Franklin</a></li>
+    	   <li class="flexItem1"><a href="#">Greenville</a></li>
+    	   <li class="flexItem1"><a href="#">Springfield</a></li>
+    	   <li class="flexItem1"><a href="https://vahinui.github.io/l08-stormcenter/">Storm Center</a></li>
+    	   <li class="flexItem1"><a href="https://vahinui.github.io/l07-gallery/">Gallery</a></li>
+        </ul>		
+    </nav>
+
+    
+<!-- CONTENT HERE -->
+    <main>
+                
+        <section>
+        
+        </section>
+        
+          <script>
+   
+    var section = document.querySelector('section');
+        
+    var requestURL = "https://byui-cit230.github.io/weather/data/towndata.json";
+    var request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
+        request.onload = function() {
+    var superTowns = request.response;
+        showTowns(superTowns);
+    }
+    
+    
+    function showTowns(jsonObj) {
+        var location = jsonObj['towns'];
+      
+        for (var i = 0; i < location.length; i++) {
+            var myArticle = document.createElement('article');
+            var myH2 = document.createElement('h2');
+            var myPara1 = document.createElement('p');
+            var myPara2 = document.createElement('p');
+            var myPara3 = document.createElement('p');
+            var myPara4 = document.createElement('p');
+            var myList = document.createElement('ul');
+
+                myH2.textContent = location[i].name;
+                myPara1.textContent = 'motto ' + location[i].motto;
+                myPara2.textContent = 'yearFounded' + location[i].year;
+                myPara3.textContent = 'currentPopulation' + location[i].population;
+                myPara4.textContent = 'averaheRainfall ' + location[i].rain;
+                myPara5.textContent = 'showEvents:';
+            
+               
+        
+            var showEvents = location[i].events;
+            for (var j = 0; j < showEvents.length; j++) {
+                var listItem = document.createElement('li');
+                    listItem.textContent = showEvents[j];
+                    myList.appendChild(listItem);
+    }
+
+                myArticle.appendChild(myH2);
+                myArticle.appendChild(myPara1);
+                myArticle.appendChild(myPara2);
+                myArticle.appendChild(myPara3);
+                myArticle.appendChild(myPara4);
+                myArticle.appendChild(myList);
+
+    section.appendChild(myArticle);
+    }
+    
+
+}
+    
+    </script>
+        
+    </main>
+    
+    <!--FOOTER HERE-->
+  <footer>
+    <section class="contact">
+      Contact information placeholder
+      999.999.9999
+      123 Main St. Anytown, US 99999
+      Google Map
+    </section>
+    <section class="footer-bar">&copy;2018 | All Rights Reserved | Get Ready to Know Your Weather | <span id="currentdate"></span>
+    </section>
+  </footer>
+    <script src="scripts/currentdate.js"></script>
+    <script src="scripts/windchill.js"></script>
+    <script src="scripts/slider.js"></script>
+</body>
+</html>

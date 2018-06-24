@@ -1,0 +1,302 @@
+/* This main css file contains the default rules and is geared toward the small/phone view */
+
+/*-----header here-----*/
+
+header {
+    padding: .5em 2%;
+    background-color: #ddd;
+}
+header h1 {
+    margin:0;
+    font-family: 'Fjalla One', sans-serif;
+}
+header h2 {
+    margin: 0;
+    font-weight: normal;
+    font-family: 'Neuton', serif;
+}
+header img {
+    float:left;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    margin-left:2%;
+       
+}
+
+ /* This wildcard applies to all elements ensuring a box layout model */
+
+* { box-sizing: border-box;
+    margin: 10;
+}
+
+/*-----NAVIGATION-----*/
+
+/*--
+nav button{
+    margin: .2rem 2%;
+    background-color: transparent;
+    border:none;
+    font-size: 1.6rem;
+    color:#555;
+}
+
+nav{
+    background-color: gray;
+    font-family: Verdana, sans-serif;
+   
+}
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ut li a{
+    display: block;
+    padding: .8rem 2%;
+    text-decoration: none;
+    color: #000;
+    
+}
+
+nav ul li.active a{background-color: rgba(0,0,0,0.2); color: #fff;}
+
+nav ul li a:hover{background-color: rgba(0,0,0,0.4); }
+
+nav ul.hide{
+    display:none;
+}
+/* Change the link color to #111 (black) on hover */
+
+
+--*/
+
+li a:hover {
+    background-color: #111;
+}
+
+
+.container1{
+    display:flex;
+    justify-content:space-around;
+}
+
+li.flexItem1{
+    background-color: gray;
+    font-family: Verdana, sans-serif;
+    padding: .6em;
+}
+
+
+/*-----BODY-----*/
+body {
+  align-content: center;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+    /* Declare the base font-family */
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+}
+
+
+
+header, nav, main, footer { /* the comma between the selectors means apply the following CSS declarations to all of the listed elements */
+  max-width:100%; /* Declare the maximum width and other main element rules to limit the stretch on larger/wider views */
+}
+
+/*---I used the table before
+table{
+    margin: auto;
+}
+
+.img2 {
+    display: block;
+    float: right;
+    width: 25%;  
+}
+
+th, td{
+    border: 1px solid black;
+    text-align: center;
+    padding: 0.5em;
+    margin-left: 0%;
+}
+
+
+th{
+    background-color: lightblue;
+}
+
+td{  }
+---*/
+
+
+h2{
+    text-align: center;
+}
+h3, p {
+    text-align: center;
+    padding: 10px
+}
+
+.sum-td{
+    background-color: lightblue;
+    
+}
+.summary{
+    display: block; 
+   
+}
+.forecast {
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+}
+li.flexItem{
+    border-style: solid;
+    width: 6em;
+    text-align: center;
+    padding: 0.3em;
+    background-color: lightblue;  
+    margin-left: 5em;
+    
+}
+
+li.flexItem2{
+    border-style: solid;
+    width: 6em;
+    text-align: center;
+    padding: 0.5em; 
+     margin-left: 5em;
+}
+
+li.flexItem3{
+    border-style: solid;
+    width: 20em;
+    text-align: center;
+    padding: 1em;
+    background-color: lightblue;  
+    margin-left: .2em;
+}
+
+li.flexItem4{
+    border-style: solid;
+    width: 20em;
+    text-align: center;
+    padding: 1em;
+    margin-left: .2em;
+}
+
+/*-----MAIN-----*/
+main {
+    padding: 0;
+    min-height: 10rem;
+}
+main h1, h2 {
+    text-align: left;
+    margin: 1rem ;
+
+}
+main figure.firstphoto{width: 100%; margin:0}
+main figure.firstphoto img{width: 100%;}
+main figure.img2 { 
+    width:50%; 
+    margin: 0 0 0 2%;
+    float: right;
+}
+main figure.img2 img {
+    width: 100%;    
+}
+
+/*----- Slider-------*/
+
+.slider {
+    -webkit-appearance: none;;
+    appearance: none;
+    width: 30%;
+    height: 5px;
+    background: grey;
+    outline: 0,7;
+    opacity: 0,7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+.slider:hover {
+    opacity: 1;
+}
+
+/*--------FORM---------*/
+
+form fieldset {
+    margin: 2rem 0;
+    border: 1px solid grey;
+    padding: .5rem 2%;
+}
+
+form label.one, form div {
+    display: block;
+    padding-top:  1rem;
+    color: darkred;
+    font-size: .9rem;
+}
+
+form label.one input, form label.one select {
+    display: block;
+    font-size: 1rem;
+    border-radius: 9px;
+    border: solid 2px grey;
+    padding: .75rem;
+    width: 100%;
+    max-width: 20rem;
+    background: rgba(0,0,0,0.05);
+}
+
+form label.two {
+    display: block;
+    display: .75rem 0;
+}
+
+form input.submitBtn {
+    border: none;
+    background-color: cadetblue;
+    color: white;
+    border-radius: 9px;
+    padding: .75rem 1.5rem;
+    margin: 0 0 2rem 2%;
+    width: 96%;
+    max-width: 20rem;
+}
+
+/*-----FOOTER-----*/
+footer {
+    text-align: center;
+    color: white;
+}
+.contact{
+    background-color: gray;
+    padding: 10px;
+}
+
+.footer-bar{
+    background-color: gray;
+    padding: 10px;
+}
+
+/*-----Clearfix-----*/
+.clearfix:after{
+    content: "";
+    display: table;
+    clear: both;
+}
