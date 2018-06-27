@@ -14,7 +14,7 @@
     
     
     function showTowns(jsonObj) {
-        var location = jsonObj['superTowns'];
+        var superTowns = jsonObj['superTowns'];
       
         for (var i = 0; i < superTowns.length; i++) {
             
