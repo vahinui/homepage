@@ -1,4 +1,4 @@
-<script>
+
    
     var section = document.querySelector('section');
         
@@ -58,4 +58,3 @@
 
 }
     
-    </script>
