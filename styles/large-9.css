@@ -22,10 +22,13 @@ nav ul li {
     
     nav ul.hide{display:block;}
         
-    nav ul{margin-left: 2%;}
+    nav ul{
+        margin-left: 2%;   
+    }
         
     nav ul li{
         float:left;
+        list-style: none;
     }
         
     nav ul li a{
