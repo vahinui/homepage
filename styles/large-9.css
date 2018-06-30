@@ -81,5 +81,9 @@ form input.submitBtn {
     max-width: 20rem;
 }
 
+    p{
+        text-align: left;
+        margin-left: 5%;
+    }
 
 }
