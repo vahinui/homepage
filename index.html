@@ -50,72 +50,38 @@
 <main>
                 
         <section>
+        <h1>Franklin</h1>
+        <p><strong>Motto:</strong> "Where you will grow!"</p>
+        <p><strong>Year Founded:</strong> 1788</p>
+        <p><strong>Current Population:</strong> 30 458</p>
+        <p><strong>Average Rain Fall</strong>: 21</p>
+        <p><strong>Events:</strong></p>
+        <p>-March 4: March to the Drum of Donuts</p>
+        <p>-September 5-11: Founder Days</p>
+        <p>-December 1-26: Christmas in the Heart</p>
         
+         <h1>Greenville</h1>
+        <p><strong>Motto:</strong> "Green is our way of life."</p>
+        <p><strong>Year Founded:</strong> 1805</p>
+        <p><strong>Current Population:</strong> 33 458</p>
+        <p><strong>Average Rain Fall:</strong> 25</p>
+        <p><strong>Events:</strong></p>
+        <p>-Febuary 10-12: Greenbration</p>
+        <p>-June 20: Verde and Valiant Day</p>
+        <p>-November 15-16: Greensome Gathering</p>
+            
+         <h1>Springfield</h1>
+        <p><strong>Motto:</strong> "Where everyone is lifted."</p>
+        <p><strong>Year Founded:</strong> 1826</p>
+        <p><strong>Current Population:</strong> 17 852</p>
+        <p><strong>Average Rain Fall:</strong> 17</p>
+        <p><strong>Events:</strong></p>
+        <p>-January 8: Spring into Winter</p>
+        <p>-April 10-20: Celebration of Life</p>
+        <p>-July 31-Aug 15: Dog Days of Summer Festival</p>
         </section>
         
-          <script>
-   
-       
-    var section = document.querySelector('section');
-        
-    var requestURL = "https://byui-cit230.github.io/weather/data/towndata.json";
-    var request = new XMLHttpRequest();
-        request.open('GET', requestURL);
-        request.responseType = 'json';
-        request.send();
-        request.onload = function() {
-    var superTowns = request.response;
-        showTowns(superTowns);
-    }
-    
-    
-    function showTowns(jsonObj) {
-        var location = jsonObj['superTowns'];
-      
-        for (var i = 0; i < superTowns.length; i++) {
-            
-            if (i==2) {
-                continue;
-            }
-            var myArticle = document.createElement('article');
-            var myH2 = document.createElement('h2');
-            var myPara1 = document.createElement('p');
-            var myPara2 = document.createElement('p');
-            var myPara3 = document.createElement('p');
-            var myPara4 = document.createElement('p');
-            var myList = document.createElement('ul');
-
-                myH2.textContent = superTowns[i].name;
-                myPara1.textContent = 'motto ' + superTowns[i].motto;
-                myPara2.textContent = 'yearFounded' + superTowns[i].year;
-                myPara3.textContent = 'currentPopulation' + superTowns[i].population;
-                myPara4.textContent = 'averaheRainfall ' + superTowns[i].rain;
-                myPara5.textContent = 'showEvents:';
-            
-               
-        
-            var showEvents = superTowns[i].events;
-            for (var j = 0; j < showEvents.length; j++) {
-                var listItem = document.createElement('li');
-                    listItem.textContent = showEvents[j];
-                    myList.appendChild(listItem);
-    }
-
-                myArticle.appendChild(myH2);
-                myArticle.appendChild(myPara1);
-                myArticle.appendChild(myPara2);
-                myArticle.appendChild(myPara3);
-                myArticle.appendChild(myPara4);
-                myArticle.appendChild(myList);
-
-    section.appendChild(myArticle);
-    }
-    
-
-}
-    
-    
-    </script>
+  
         
     </main>
     
@@ -130,8 +96,8 @@
     <section class="footer-bar">&copy;2018 | All Rights Reserved | Get Ready to Know Your Weather | <span id="currentdate"></span>
     </section>
   </footer>
-    <script src="scripts/currentdate.js"></script>
-    <script src="scripts/windchill.js"></script>
-    <script src="scripts/slider.js"></script>
+    
+    
+    <script src="scripts/scripts.js"></script>
 </body>
 </html>
