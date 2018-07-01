@@ -33,7 +33,7 @@
     
     
 <!--NAVIGATION HERE-->  
-    <nav class="clearfix">
+    <nav id="mainmenu" class="clearfix">
         <button onclick="toggleMenu">&#97776;</button>
         <ul class="container1" id="primaryNav" class="hide">
     	   <li class="flexItem1"><a href="https://vahinui.github.io/homepage/">Home</a></li>
@@ -100,4 +100,25 @@
     
     <script src="scripts/scripts.js"></script>
 </body>
+    
+    <script>
+    var urlString = document.location.href;
+        var urlArray = urlString.split('/');
+        var pageHREF=urlArray[urlArray.lenght-1];
+        
+        if (pageHREF !=="") {
+            
+            var menu = document.querySelectorAll('ul#mainmenu li a');
+            var i;
+            
+            for(i=0; i<menu.lenght; i++) {
+                
+                var currentURL=(menu[i].getAttribute("href"));
+                menu[i].parentNode.className="";
+                if (currentURL===pageHREF) {
+                    menu[i].parentNode.className="active";
+                }
+            }
+        }
+    </script>
 </html>
